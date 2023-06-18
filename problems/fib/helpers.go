@@ -1,11 +1,11 @@
 package fib
 
 //nolint:deadcode
-func fibExponential(n int) int {
+func _fibExponential(n int) int {
 	if n <= 1 {
 		return n
 	} else {
-		return fibExponential(n-1) + fibExponential(n-2)
+		return _fibExponential(n-1) + _fibExponential(n-2)
 	}
 }
 
