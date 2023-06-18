@@ -13,3 +13,9 @@ clean:
 
 test:
 	go test -v -cover ./...
+
+fmt:
+	go fmt ./...
+
+vet:
+	go vet ./...
