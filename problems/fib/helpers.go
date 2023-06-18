@@ -1,13 +1,12 @@
 package fib
 
-//nolint:deadcode
-func _fibExponential(n int) int {
-	if n <= 1 {
-		return n
-	} else {
-		return _fibExponential(n-1) + _fibExponential(n-2)
-	}
-}
+// func _fibExponential(n int) int {
+// 	if n <= 1 {
+// 		return n
+// 	} else {
+// 		return _fibExponential(n-1) + _fibExponential(n-2)
+// 	}
+// }
 
 func FibOptimized(n int) int {
 	a := 0
