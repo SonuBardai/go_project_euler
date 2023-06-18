@@ -33,9 +33,28 @@ func TestFibSeries(t *testing.T) {
 	}
 	for _, testCase := range testCases {
 		t.Run(testCase.name, func(t *testing.T) {
-			sumReceived := fibSeries(testCase.input)
-			if sumReceived != testCase.expected {
-				t.Errorf("expected %d, got %d", testCase.expected, sumReceived)
+			received := fibSeries(testCase.input)
+			if received != testCase.expected {
+				t.Errorf("expected %d, got %d", testCase.expected, received)
+			}
+		})
+	}
+}
+
+func TestLargestPrimeFactor(t *testing.T) {
+	testCases := []struct {
+		name     string
+		input    int
+		expected int
+	}{
+		{"test case from question", 13195, 29},
+		{"main test case", 600851475143, 6857},
+	}
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			received := largestPrimeFactor(testCase.input)
+			if received != testCase.expected {
+				t.Errorf("expected %d, got %d", testCase.expected, received)
 			}
 		})
 	}

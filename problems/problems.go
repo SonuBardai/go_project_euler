@@ -11,6 +11,8 @@ func Mapper(problemNumber int) (func(input int) int, error) {
 		return sumOfMultiples, nil
 	case 2:
 		return fibSeries, nil
+	case 3:
+		return largestPrimeFactor, nil
 	}
 	return nil, fmt.Errorf("problem-%d not solved", problemNumber)
 }

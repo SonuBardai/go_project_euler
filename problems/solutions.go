@@ -1,7 +1,7 @@
 package problems
 
 import (
-	"fmt"
+	"math"
 
 	"github.com/SonuBardai/go_project_euler/problems/fib"
 )
@@ -28,14 +28,35 @@ func fibSeries(input int) int {
 		i += 1
 	}
 	var sum int
-	var even []int
+	// var even []int
 	for i := 0; i < len(series); i++ {
 		if series[i]%2 == 0 {
 			sum += series[i]
-			even = append(even, series[i])
+			// even = append(even, series[i])
 		}
 	}
-	fmt.Println("Fibonacci series", series)
-	fmt.Printf("Even fibonacci numbers lower than %d: %v \n", input, even)
+	// fmt.Println("Fibonacci series", series)
+	// fmt.Printf("Even fibonacci numbers lower than %d: %v \n", input, even)
 	return sum
+}
+
+func largestPrimeFactor(input int) int {
+	maxPrime := 2
+	n := input
+	for n%2 == 0 {
+		n /= 2
+	}
+	for i := 3; i <= int(math.Sqrt(float64(n))); i++ {
+		if i%2 == 0 {
+			continue
+		}
+		for n%i == 0 {
+			maxPrime = i
+			n /= i
+		}
+	}
+	if n > 2 {
+		maxPrime = n
+	}
+	return maxPrime
 }
