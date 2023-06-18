@@ -1,5 +1,6 @@
 package fib
 
+//nolint:deadcode
 func fibExponential(n int) int {
 	if n <= 1 {
 		return n
