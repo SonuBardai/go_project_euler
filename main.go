@@ -1,21 +1,24 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"os"
-	"strconv"
 
-	"github.com/SonuBardai/go_project_euler/utils"
+	"github.com/SonuBardai/go_project_euler/problems"
 )
 
 func main() {
-	args := os.Args[1:]
+	var input int
+	var problem int
+	flag.IntVar(&problem, "problem", 1, "Problem number")
+	flag.IntVar(&input, "input", 0, "Value of input to the problem")
+	flag.Parse()
+	Solution, err := problems.Mapper(problem)
+	if err != nil {
+		fmt.Println(err)
+	} else {
 
-	fmt.Println(args)
-
-	if utils.Any(args, []string{"--problem", "-p"}) {
-		if problem_num, err := strconv.Atoi(args[1]); err == nil {
-			fmt.Println("Problem: ", problem_num)
-		}
+		solution := Solution(input)
+		fmt.Printf("Solution: %d\n", solution)
 	}
 }

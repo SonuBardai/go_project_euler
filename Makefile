@@ -4,9 +4,10 @@ build:
 	go build .
 
 problem ?= 1
+input ?= 0
 
 run: build
-	./${BINARY_NAME} ${problem} ${input}
+	./${BINARY_NAME} --problem ${problem} --input ${input}
 
 clean:
 	go clean
