@@ -9,6 +9,8 @@ func Mapper(problemNumber int) (func(input int) int, error) {
 	switch problemNumber {
 	case 1:
 		return sumOfMultiples, nil
+	case 2:
+		return fibSeries, nil
 	}
 	return nil, fmt.Errorf("problem-%d not solved", problemNumber)
 }
