@@ -2,4 +2,4 @@
 Project Euler solutions in Go!
 
 gopher euler
-![gopher_euler](./gopher_euler.jpeg)
+![gopher_euler](./gopher_euler.png)
