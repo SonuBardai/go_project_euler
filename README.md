@@ -2,4 +2,4 @@
 Project Euler solutions in Go!
 
 gopher euler
-![gopher_euler](https://imgur.com/a/k8hTBwv)
+![gopher_euler](https://i.imgur.com/lpxkQ58.jpeg)
