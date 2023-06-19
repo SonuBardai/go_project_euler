@@ -59,3 +59,23 @@ func TestLargestPrimeFactor(t *testing.T) {
 		})
 	}
 }
+
+func TestPalindromeProduct(t *testing.T) {
+	testCases := []struct {
+		name     string
+		input    int
+		expected int
+	}{
+		{"single digit solution", 1, 9},
+		{"test case from question", 2, 9009},
+		{"main test case", 3, 906609},
+	}
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			received := largestPalindromeProduct(testCase.input)
+			if received != testCase.expected {
+				t.Errorf("expected %d, got %d", testCase.expected, received)
+			}
+		})
+	}
+}

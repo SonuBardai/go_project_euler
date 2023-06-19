@@ -23,3 +23,24 @@ func TestAny(t *testing.T) {
 		t.Errorf("Any(%v, %v) = true; want false", items, not_candidates)
 	}
 }
+
+func TestReverse(t *testing.T) {
+	testCases := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{"test_1", "abcd", "dcba"},
+		{"test_2", "0000", "0000"},
+		{"test_3", "Hello", "olleH"},
+		{"test_4", "98989898", "89898989"},
+	}
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			received := Reverse(testCase.input)
+			if received != testCase.expected {
+				t.Errorf("expected %s, got %s", testCase.expected, received)
+			}
+		})
+	}
+}

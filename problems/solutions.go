@@ -1,9 +1,11 @@
 package problems
 
 import (
+	"fmt"
 	"math"
 
 	"github.com/SonuBardai/go_project_euler/problems/fib"
+	"github.com/SonuBardai/go_project_euler/problems/palindrome"
 )
 
 func sumOfMultiples(input int) int {
@@ -59,4 +61,20 @@ func largestPrimeFactor(input int) int {
 		maxPrime = n
 	}
 	return maxPrime
+}
+
+func largestPalindromeProduct(input int) int {
+	if input > 8 {
+		panic("That's gonna be a big number!")
+	}
+	for a := palindrome.Niner(input); a > palindrome.Niner(input-1); a-- {
+		for b := a; b >= a-int(math.Pow10(input-1)); b-- {
+			c := a * b
+			if palindrome.IsPalindrome(c) {
+				fmt.Println(a, b)
+				return c
+			}
+		}
+	}
+	panic("Can't find palindrome!")
 }
