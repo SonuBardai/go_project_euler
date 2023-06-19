@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-// go: noinline
 func Mapper(problemNumber int) (func(input int) int, error) {
 	switch problemNumber {
 	case 1:
@@ -15,6 +14,8 @@ func Mapper(problemNumber int) (func(input int) int, error) {
 		return largestPrimeFactor, nil
 	case 4:
 		return largestPalindromeProduct, nil
+	case 5:
+		return smallestMultiple, nil
 	}
 	return nil, fmt.Errorf("problem-%d not solved", problemNumber)
 }

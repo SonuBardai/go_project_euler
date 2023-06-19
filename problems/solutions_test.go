@@ -79,3 +79,22 @@ func TestPalindromeProduct(t *testing.T) {
 		})
 	}
 }
+
+func TestSmallestMultiple(t *testing.T) {
+	testCases := []struct {
+		name     string
+		input    int
+		expected int
+	}{
+		{"solution from problem", 10, 2520},
+		{"main test case", 20, 232792560},
+	}
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			received := smallestMultiple(testCase.input)
+			if received != testCase.expected {
+				t.Errorf("expected %d, got %d", testCase.expected, received)
+			}
+		})
+	}
+}

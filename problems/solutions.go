@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 
+	"github.com/SonuBardai/go_project_euler/problems/divisors"
 	"github.com/SonuBardai/go_project_euler/problems/fib"
 	"github.com/SonuBardai/go_project_euler/problems/palindrome"
 )
@@ -77,4 +78,12 @@ func largestPalindromeProduct(input int) int {
 		}
 	}
 	panic("Can't find palindrome!")
+}
+
+func smallestMultiple(input int) int {
+	result := 1
+	for i := 2; i <= input; i++ {
+		result = divisors.Lcm(result, i)
+	}
+	return result
 }
